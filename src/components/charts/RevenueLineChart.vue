@@ -13,6 +13,7 @@ import { Line } from "vue-chartjs";
 import {
   FIRMS,
   lastQuarterKeys,
+  longQuarter,
   quarterOf,
   shortQuarter,
 } from "../../data/metrics";
@@ -38,6 +39,7 @@ const chartData = computed(() => ({
     data: keys.map((key) => quarterOf(firm, key)?.revenue ?? null),
     spanGaps: false,
     pointRadius: 0,
+    pointHoverRadius: 4,
     borderWidth: 1.5,
     tension: 0.3,
   })),
@@ -46,10 +48,22 @@ const chartData = computed(() => ({
 const options = {
   responsive: true,
   maintainAspectRatio: false,
+  interaction: { mode: "index" as const, intersect: false },
   plugins: {
     legend: {
       position: "right" as const,
       labels: { color: "#ffffff", boxWidth: 12, font: { size: 10 } },
+    },
+    tooltip: {
+      callbacks: {
+        title: (items: { dataIndex: number }[]) =>
+          items.length ? longQuarter(keys[items[0].dataIndex]) : "",
+        label: (item: {
+          dataset: { label?: string };
+          parsed: { y: number | null };
+        }) =>
+          `${item.dataset.label}: ${item.parsed.y === null ? "no data" : item.parsed.y.toFixed(2) + " bn $"}`,
+      },
     },
   },
   scales: {

@@ -17,7 +17,7 @@ const chartData = computed(() => ({
   labels: FIRMS.map((f) => f.label),
   datasets: [
     {
-      label: "Net Income TTM (Mrd. $)",
+      label: "Net Income TTM (bn $)",
       data: FIRMS.map((f) => ttm(f, "netIncome")),
       backgroundColor: FIRMS.map((f) => f.color),
       borderColor: "#ffffff",

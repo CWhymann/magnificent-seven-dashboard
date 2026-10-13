@@ -9,7 +9,7 @@ import {
   Legend,
 } from "chart.js";
 import { Bar } from "vue-chartjs";
-import { FIRMS } from "../../data/metrics";
+import { FIRMS, longQuarter } from "../../data/metrics";
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 
@@ -30,7 +30,21 @@ const options = {
   indexAxis: "y" as const,
   responsive: true,
   maintainAspectRatio: false,
-  plugins: { legend: { display: false } },
+  plugins: {
+    legend: { display: false },
+    tooltip: {
+      callbacks: {
+        label: (item: { dataIndex: number; parsed: { x: number | null } }) => {
+          const firm = FIRMS[item.dataIndex];
+          const quarter = firm.quarters.at(-1)?.quarter ?? "";
+          return [
+            `${firm.label}: ${item.parsed.x?.toFixed(1)} %`,
+            `Quarter: ${longQuarter(quarter)}`,
+          ];
+        },
+      },
+    },
+  },
   scales: {
     x: {
       ticks: { color: "#ffffff", font: { size: 8 } },

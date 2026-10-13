@@ -2,7 +2,7 @@
 import { computed } from "vue";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "vue-chartjs";
-import { FIRMS, ttm } from "../../data/metrics";
+import { FIRMS, longQuarter, ttm } from "../../data/metrics";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -25,6 +25,18 @@ const options = {
     legend: {
       position: "right" as const,
       labels: { color: "#ffffff", boxWidth: 12, font: { size: 10 } },
+    },
+    tooltip: {
+      callbacks: {
+        label: (item: { dataIndex: number; parsed: number }) => {
+          const firm = FIRMS[item.dataIndex];
+          const newest = firm.quarters.at(-1)?.quarter ?? "";
+          return [
+            `${firm.label}: ${item.parsed.toFixed(2)} bn $ (TTM)`,
+            `Latest quarter: ${longQuarter(newest)}`,
+          ];
+        },
+      },
     },
   },
 };
