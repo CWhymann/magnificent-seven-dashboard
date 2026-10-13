@@ -38,7 +38,7 @@ function buildCompanies(): Company[] {
     }
     return {
       name: item.name,
-      logo: item.logo,
+      logo: import.meta.env.BASE_URL + item.logo.slice(1),
       quarters: source.quarters.map((q) => ({
         label: formatQuarter(q.quarter),
         revenue: q.revenue,

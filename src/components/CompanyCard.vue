@@ -4,6 +4,7 @@ import type { Company } from "../data/companies";
 import { FIRMS } from "../data/metrics";
 
 const props = defineProps<{ company: Company; selected: boolean }>();
+const base = import.meta.env.BASE_URL;
 const emit = defineEmits<{ select: [name: string] }>();
 
 /** Index of the shown quarter. Starts on the latest reported quarter. */
@@ -108,7 +109,9 @@ function step(delta: number): void {
           <span>{{ signed(change) }}</span>
           <img
             :src="
-              positive ? '/icons/arrow-up-green.svg' : '/icons/arrow-up-red.svg'
+              positive
+                ? base + 'icons/arrow-up-green.svg'
+                : base + 'icons/arrow-up-red.svg'
             "
             alt=""
             class="size-5"
@@ -119,7 +122,9 @@ function step(delta: number): void {
           <span>{{ signed(changePercent) }}</span>
           <img
             :src="
-              positive ? '/icons/percent-green.svg' : '/icons/percent-red.svg'
+              positive
+                ? base + 'icons/percent-green.svg'
+                : base + 'icons/percent-red.svg'
             "
             alt=""
             class="size-5"
