@@ -29,15 +29,19 @@ function toggleSelected(name: string): void {
 </script>
 
 <template>
-  <main class="mx-auto flex w-full max-w-306 flex-col gap-8 px-4 py-16">
-    <header class="flex items-center gap-6">
+  <main
+    class="mx-auto flex w-full max-w-306 flex-col gap-6 px-3 py-10 sm:gap-8 sm:px-4 sm:py-16"
+  >
+    <header class="flex items-center gap-4 sm:gap-6">
       <span class="h-8 w-24 rounded-r-full bg-accent" />
-      <h1 class="text-4xl font-medium text-title">
+      <h1 class="text-2xl font-medium text-title sm:text-4xl">
         The Magnificent Seven Companies
       </h1>
     </header>
 
-    <div class="flex items-center gap-4 rounded-[20px] bg-panel-wrap p-6">
+    <div
+      class="flex items-center gap-2 rounded-[20px] bg-panel-wrap p-3 sm:gap-4 sm:p-6"
+    >
       <button
         type="button"
         class="flex size-8 shrink-0 items-center justify-center rounded-full bg-accent text-panel"
@@ -60,7 +64,7 @@ function toggleSelected(name: string): void {
 
       <section
         ref="strip"
-        class="flex min-w-0 flex-1 gap-6 overflow-x-auto scrollbar-none"
+        class="flex min-w-0 flex-1 gap-4 overflow-x-auto scrollbar-none sm:gap-6"
         @scroll="updateScrollState"
       >
         <CompanyCard
@@ -68,7 +72,7 @@ function toggleSelected(name: string): void {
           :key="company.name"
           :company="company"
           :selected="selected === company.name"
-          class="w-44 shrink-0"
+          class="w-40 shrink-0 sm:w-44"
           @select="toggleSelected"
         />
       </section>
@@ -95,7 +99,9 @@ function toggleSelected(name: string): void {
 
     <CompanyDetail v-if="selected" :name="selected" @close="selected = null" />
 
-    <section class="grid grid-cols-1 gap-8 xl:grid-cols-[714px_minmax(0,1fr)]">
+    <section
+      class="grid grid-cols-1 gap-6 sm:gap-8 xl:grid-cols-[714px_minmax(0,1fr)]"
+    >
       <ChartPanel title="Revenue last 3 years" class="h-88">
         <RevenueLineChart />
       </ChartPanel>
@@ -105,7 +111,7 @@ function toggleSelected(name: string): void {
     </section>
 
     <section
-      class="grid grid-cols-1 gap-8 xl:grid-cols-[minmax(0,1fr)_293px_491px]"
+      class="grid grid-cols-1 gap-6 sm:gap-8 xl:grid-cols-[minmax(0,1fr)_293px_491px]"
     >
       <ChartPanel title="Net Income TTM" class="h-74">
         <NetIncomeBar />
