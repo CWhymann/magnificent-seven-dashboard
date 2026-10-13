@@ -49,7 +49,7 @@ onUnmounted(() => {
 
 <template>
   <main
-    class="mx-auto flex w-full max-w-[1280px] flex-col gap-6 px-1 py-10 sm:gap-8 sm:px-4 sm:py-16"
+    class="mx-auto flex w-full max-w-306 flex-col gap-6 px-3 py-10 sm:gap-8 sm:px-4 sm:py-16"
   >
     <header class="flex min-w-0 items-center gap-2 sm:gap-6">
       <span class="h-6 w-8 shrink-0 rounded-r-full bg-accent sm:h-8 sm:w-24" />
@@ -122,7 +122,7 @@ onUnmounted(() => {
     <CompanyDetail v-if="selected" :name="selected" @close="selected = null" />
 
     <section
-      class="grid grid-cols-1 gap-6 sm:gap-8 xl:grid-cols-[714px_minmax(0,1fr)]"
+      class="-mx-2 grid grid-cols-1 gap-6 sm:mx-0 sm:gap-8 xl:grid-cols-[714px_minmax(0,1fr)]"
     >
       <ChartPanel title="Revenue last 3 years" class="h-80 sm:h-88">
         <RevenueLineChart />
@@ -136,7 +136,7 @@ onUnmounted(() => {
     </section>
 
     <section
-      class="grid grid-cols-1 gap-6 sm:gap-8 xl:grid-cols-[minmax(0,1fr)_293px_491px]"
+      class="-mx-2 grid grid-cols-1 gap-6 sm:mx-0 sm:gap-8 xl:grid-cols-[minmax(0,1fr)_293px_491px]"
     >
       <ChartPanel title="Net Income TTM" class="h-80 sm:h-74">
         <NetIncomeBar />
