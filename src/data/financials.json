@@ -1,0 +1,1217 @@
+{
+  "updatedAt": "2026-10-13T18:19:06.795Z",
+  "latestQuarter": "2025Q4",
+  "companies": [
+    {
+      "name": "Alphabet",
+      "quarters": [
+        {
+          "quarter": "2019Q1",
+          "revenue": 36.339,
+          "netIncome": 8.354,
+          "grossMargin": 55.9
+        },
+        {
+          "quarter": "2019Q2",
+          "revenue": 38.944,
+          "netIncome": 9.947,
+          "grossMargin": 55.6
+        },
+        {
+          "quarter": "2019Q3",
+          "revenue": 40.344,
+          "netIncome": 6.913,
+          "grossMargin": 56.5
+        },
+        {
+          "quarter": "2019Q4",
+          "revenue": 45.812,
+          "netIncome": 10.408,
+          "grossMargin": 54.1
+        },
+        {
+          "quarter": "2020Q1",
+          "revenue": 41.159,
+          "netIncome": 8.129,
+          "grossMargin": 53.9
+        },
+        {
+          "quarter": "2020Q2",
+          "revenue": 38.297,
+          "netIncome": 6.959,
+          "grossMargin": 51.6
+        },
+        {
+          "quarter": "2020Q3",
+          "revenue": 46.173,
+          "netIncome": 11.247,
+          "grossMargin": 54.3
+        },
+        {
+          "quarter": "2020Q4",
+          "revenue": 56.898,
+          "netIncome": 15.227,
+          "grossMargin": 54.2
+        },
+        {
+          "quarter": "2021Q1",
+          "revenue": 55.314,
+          "netIncome": 17.93,
+          "grossMargin": 56.4
+        },
+        {
+          "quarter": "2021Q2",
+          "revenue": 61.88,
+          "netIncome": 18.525,
+          "grossMargin": 57.6
+        },
+        {
+          "quarter": "2021Q3",
+          "revenue": 65.118,
+          "netIncome": 18.936,
+          "grossMargin": 57.6
+        },
+        {
+          "quarter": "2021Q4",
+          "revenue": 75.325,
+          "netIncome": 20.642,
+          "grossMargin": 56.2
+        },
+        {
+          "quarter": "2022Q1",
+          "revenue": 68.011,
+          "netIncome": 16.436,
+          "grossMargin": 56.5
+        },
+        {
+          "quarter": "2022Q2",
+          "revenue": 69.685,
+          "netIncome": 16.002,
+          "grossMargin": 56.8
+        },
+        {
+          "quarter": "2022Q3",
+          "revenue": 69.092,
+          "netIncome": 13.91,
+          "grossMargin": 54.9
+        },
+        {
+          "quarter": "2022Q4",
+          "revenue": 76.048,
+          "netIncome": 13.624,
+          "grossMargin": 53.5
+        },
+        {
+          "quarter": "2023Q1",
+          "revenue": 69.787,
+          "netIncome": 15.051,
+          "grossMargin": 56.1
+        },
+        {
+          "quarter": "2023Q2",
+          "revenue": 74.604,
+          "netIncome": 18.368,
+          "grossMargin": 57.2
+        },
+        {
+          "quarter": "2023Q3",
+          "revenue": 76.693,
+          "netIncome": 19.689,
+          "grossMargin": 56.7
+        },
+        {
+          "quarter": "2023Q4",
+          "revenue": 86.31,
+          "netIncome": 20.687,
+          "grossMargin": 56.5
+        },
+        {
+          "quarter": "2024Q1",
+          "revenue": 80.539,
+          "netIncome": 23.662,
+          "grossMargin": 58.1
+        },
+        {
+          "quarter": "2024Q2",
+          "revenue": 84.742,
+          "netIncome": 23.619,
+          "grossMargin": 58.1
+        },
+        {
+          "quarter": "2024Q3",
+          "revenue": 88.268,
+          "netIncome": 26.301,
+          "grossMargin": 58.7
+        },
+        {
+          "quarter": "2024Q4",
+          "revenue": 96.469,
+          "netIncome": 26.536,
+          "grossMargin": 57.9
+        },
+        {
+          "quarter": "2025Q1",
+          "revenue": 90.234,
+          "netIncome": 34.54,
+          "grossMargin": 59.7
+        },
+        {
+          "quarter": "2025Q2",
+          "revenue": 96.428,
+          "netIncome": 28.196,
+          "grossMargin": 59.5
+        },
+        {
+          "quarter": "2025Q3",
+          "revenue": 102.346,
+          "netIncome": 34.979,
+          "grossMargin": 59.6
+        },
+        {
+          "quarter": "2025Q4",
+          "revenue": 113.828,
+          "netIncome": 34.455,
+          "grossMargin": 59.8
+        }
+      ]
+    },
+    {
+      "name": "Apple",
+      "quarters": [
+        {
+          "quarter": "2019Q1",
+          "revenue": 84.31,
+          "netIncome": 19.965,
+          "grossMargin": 38
+        },
+        {
+          "quarter": "2019Q2",
+          "revenue": 58.015,
+          "netIncome": 11.561,
+          "grossMargin": 37.6
+        },
+        {
+          "quarter": "2019Q3",
+          "revenue": 53.809,
+          "netIncome": 10.044,
+          "grossMargin": 37.6
+        },
+        {
+          "quarter": "2019Q4",
+          "revenue": 64.04,
+          "netIncome": 13.686,
+          "grossMargin": 38
+        },
+        {
+          "quarter": "2020Q1",
+          "revenue": 91.819,
+          "netIncome": 22.236,
+          "grossMargin": 38.4
+        },
+        {
+          "quarter": "2020Q2",
+          "revenue": 58.313,
+          "netIncome": 11.249,
+          "grossMargin": 38.4
+        },
+        {
+          "quarter": "2020Q3",
+          "revenue": 59.685,
+          "netIncome": 11.253,
+          "grossMargin": 38
+        },
+        {
+          "quarter": "2020Q4",
+          "revenue": 64.698,
+          "netIncome": 12.673,
+          "grossMargin": 38.2
+        },
+        {
+          "quarter": "2021Q1",
+          "revenue": 111.439,
+          "netIncome": 28.755,
+          "grossMargin": 39.8
+        },
+        {
+          "quarter": "2021Q2",
+          "revenue": 89.584,
+          "netIncome": 23.63,
+          "grossMargin": 42.5
+        },
+        {
+          "quarter": "2021Q3",
+          "revenue": 81.434,
+          "netIncome": 21.744,
+          "grossMargin": 43.3
+        },
+        {
+          "quarter": "2021Q4",
+          "revenue": 83.36,
+          "netIncome": 20.551,
+          "grossMargin": 42.2
+        },
+        {
+          "quarter": "2022Q1",
+          "revenue": 123.945,
+          "netIncome": 34.63,
+          "grossMargin": 43.8
+        },
+        {
+          "quarter": "2022Q2",
+          "revenue": 97.278,
+          "netIncome": 25.01,
+          "grossMargin": 43.7
+        },
+        {
+          "quarter": "2022Q3",
+          "revenue": 82.959,
+          "netIncome": 19.442,
+          "grossMargin": 43.3
+        },
+        {
+          "quarter": "2022Q4",
+          "revenue": 90.146,
+          "netIncome": 20.721,
+          "grossMargin": 42.3
+        },
+        {
+          "quarter": "2023Q1",
+          "revenue": 117.154,
+          "netIncome": 29.998,
+          "grossMargin": 43
+        },
+        {
+          "quarter": "2023Q2",
+          "revenue": 94.836,
+          "netIncome": 24.16,
+          "grossMargin": 44.3
+        },
+        {
+          "quarter": "2023Q3",
+          "revenue": 81.797,
+          "netIncome": 19.881,
+          "grossMargin": 44.5
+        },
+        {
+          "quarter": "2023Q4",
+          "revenue": 89.498,
+          "netIncome": 22.956,
+          "grossMargin": 45.2
+        },
+        {
+          "quarter": "2024Q1",
+          "revenue": 119.575,
+          "netIncome": 33.916,
+          "grossMargin": 45.9
+        },
+        {
+          "quarter": "2024Q2",
+          "revenue": 90.753,
+          "netIncome": 23.636,
+          "grossMargin": 46.6
+        },
+        {
+          "quarter": "2024Q3",
+          "revenue": 85.777,
+          "netIncome": 21.448,
+          "grossMargin": 46.3
+        },
+        {
+          "quarter": "2024Q4",
+          "revenue": 94.93,
+          "netIncome": 14.736,
+          "grossMargin": 46.2
+        },
+        {
+          "quarter": "2025Q1",
+          "revenue": 124.3,
+          "netIncome": 36.33,
+          "grossMargin": 46.9
+        },
+        {
+          "quarter": "2025Q2",
+          "revenue": 95.359,
+          "netIncome": 24.78,
+          "grossMargin": 47.1
+        },
+        {
+          "quarter": "2025Q3",
+          "revenue": 94.036,
+          "netIncome": 23.434,
+          "grossMargin": 46.5
+        },
+        {
+          "quarter": "2025Q4",
+          "revenue": 102.466,
+          "netIncome": 27.466,
+          "grossMargin": 47.2
+        }
+      ]
+    },
+    {
+      "name": "Amazon",
+      "quarters": [
+        {
+          "quarter": "2019Q1",
+          "revenue": 59.7,
+          "netIncome": 3.561,
+          "grossMargin": 43.2
+        },
+        {
+          "quarter": "2019Q2",
+          "revenue": 63.404,
+          "netIncome": 2.625,
+          "grossMargin": 42.7
+        },
+        {
+          "quarter": "2019Q3",
+          "revenue": 69.981,
+          "netIncome": 2.134,
+          "grossMargin": 41
+        },
+        {
+          "quarter": "2019Q4",
+          "revenue": 87.437,
+          "netIncome": 3.268,
+          "grossMargin": 38.3
+        },
+        {
+          "quarter": "2020Q1",
+          "revenue": 75.452,
+          "netIncome": 2.535,
+          "grossMargin": 41.3
+        },
+        {
+          "quarter": "2020Q2",
+          "revenue": 88.912,
+          "netIncome": 5.243,
+          "grossMargin": 40.8
+        },
+        {
+          "quarter": "2020Q3",
+          "revenue": 96.145,
+          "netIncome": 6.331,
+          "grossMargin": 40.6
+        },
+        {
+          "quarter": "2020Q4",
+          "revenue": 125.555,
+          "netIncome": 7.222,
+          "grossMargin": 36.9
+        },
+        {
+          "quarter": "2021Q1",
+          "revenue": 108.518,
+          "netIncome": 8.107,
+          "grossMargin": 42.5
+        },
+        {
+          "quarter": "2021Q2",
+          "revenue": 113.08,
+          "netIncome": 7.778,
+          "grossMargin": 43.2
+        },
+        {
+          "quarter": "2021Q3",
+          "revenue": 110.812,
+          "netIncome": 3.156,
+          "grossMargin": 43.2
+        },
+        {
+          "quarter": "2021Q4",
+          "revenue": 137.412,
+          "netIncome": 14.323,
+          "grossMargin": 39.7
+        },
+        {
+          "quarter": "2022Q1",
+          "revenue": 116.444,
+          "netIncome": -3.844,
+          "grossMargin": 42.9
+        },
+        {
+          "quarter": "2022Q2",
+          "revenue": 121.234,
+          "netIncome": -2.028,
+          "grossMargin": 45.2
+        },
+        {
+          "quarter": "2022Q3",
+          "revenue": 127.101,
+          "netIncome": 2.872,
+          "grossMargin": 44.7
+        },
+        {
+          "quarter": "2022Q4",
+          "revenue": 149.204,
+          "netIncome": 0.278,
+          "grossMargin": 42.6
+        },
+        {
+          "quarter": "2023Q1",
+          "revenue": 127.358,
+          "netIncome": 3.172,
+          "grossMargin": 46.8
+        },
+        {
+          "quarter": "2023Q2",
+          "revenue": 134.383,
+          "netIncome": 6.75,
+          "grossMargin": 48.4
+        },
+        {
+          "quarter": "2023Q3",
+          "revenue": 143.083,
+          "netIncome": 9.879,
+          "grossMargin": 47.6
+        },
+        {
+          "quarter": "2023Q4",
+          "revenue": 169.961,
+          "netIncome": 10.624,
+          "grossMargin": 45.5
+        },
+        {
+          "quarter": "2024Q1",
+          "revenue": 143.313,
+          "netIncome": 10.431,
+          "grossMargin": 49.3
+        },
+        {
+          "quarter": "2024Q2",
+          "revenue": 147.977,
+          "netIncome": 13.485,
+          "grossMargin": 50.1
+        },
+        {
+          "quarter": "2024Q3",
+          "revenue": 158.877,
+          "netIncome": 15.328,
+          "grossMargin": 49
+        },
+        {
+          "quarter": "2024Q4",
+          "revenue": 187.792,
+          "netIncome": 20.004,
+          "grossMargin": 47.3
+        },
+        {
+          "quarter": "2025Q1",
+          "revenue": 155.667,
+          "netIncome": 17.127,
+          "grossMargin": 50.6
+        },
+        {
+          "quarter": "2025Q2",
+          "revenue": 167.702,
+          "netIncome": 18.164,
+          "grossMargin": 51.8
+        },
+        {
+          "quarter": "2025Q3",
+          "revenue": 180.169,
+          "netIncome": 21.187,
+          "grossMargin": 50.8
+        },
+        {
+          "quarter": "2025Q4",
+          "revenue": 213.386,
+          "netIncome": 21.192,
+          "grossMargin": 48.5
+        }
+      ]
+    },
+    {
+      "name": "Meta",
+      "quarters": [
+        {
+          "quarter": "2019Q1",
+          "revenue": 15.077,
+          "netIncome": 2.429,
+          "grossMargin": 81.3
+        },
+        {
+          "quarter": "2019Q2",
+          "revenue": 16.886,
+          "netIncome": 2.616,
+          "grossMargin": 80.4
+        },
+        {
+          "quarter": "2019Q3",
+          "revenue": 17.652,
+          "netIncome": 6.091,
+          "grossMargin": 82.1
+        },
+        {
+          "quarter": "2019Q4",
+          "revenue": 21.082,
+          "netIncome": 7.349,
+          "grossMargin": 83.4
+        },
+        {
+          "quarter": "2020Q1",
+          "revenue": 17.737,
+          "netIncome": 4.902,
+          "grossMargin": 80.5
+        },
+        {
+          "quarter": "2020Q2",
+          "revenue": 18.687,
+          "netIncome": 5.178,
+          "grossMargin": 79.5
+        },
+        {
+          "quarter": "2020Q3",
+          "revenue": 21.47,
+          "netIncome": 7.846,
+          "grossMargin": 80.5
+        },
+        {
+          "quarter": "2020Q4",
+          "revenue": 28.072,
+          "netIncome": 11.219,
+          "grossMargin": 81.4
+        },
+        {
+          "quarter": "2021Q1",
+          "revenue": 26.171,
+          "netIncome": 9.497,
+          "grossMargin": 80.4
+        },
+        {
+          "quarter": "2021Q2",
+          "revenue": 29.077,
+          "netIncome": 10.394,
+          "grossMargin": 81.4
+        },
+        {
+          "quarter": "2021Q3",
+          "revenue": 29.01,
+          "netIncome": 9.194,
+          "grossMargin": 80.1
+        },
+        {
+          "quarter": "2021Q4",
+          "revenue": 33.671,
+          "netIncome": 10.285,
+          "grossMargin": 81.1
+        },
+        {
+          "quarter": "2022Q1",
+          "revenue": 27.908,
+          "netIncome": 7.465,
+          "grossMargin": 78.5
+        },
+        {
+          "quarter": "2022Q2",
+          "revenue": 28.822,
+          "netIncome": 6.687,
+          "grossMargin": 82
+        },
+        {
+          "quarter": "2022Q3",
+          "revenue": 27.714,
+          "netIncome": 4.395,
+          "grossMargin": 79.4
+        },
+        {
+          "quarter": "2022Q4",
+          "revenue": 32.165,
+          "netIncome": 4.652,
+          "grossMargin": 74.1
+        },
+        {
+          "quarter": "2023Q1",
+          "revenue": 28.645,
+          "netIncome": 5.709,
+          "grossMargin": 78.7
+        },
+        {
+          "quarter": "2023Q2",
+          "revenue": 31.999,
+          "netIncome": 7.788,
+          "grossMargin": 81.4
+        },
+        {
+          "quarter": "2023Q3",
+          "revenue": 34.146,
+          "netIncome": 12.144,
+          "grossMargin": 81.8
+        },
+        {
+          "quarter": "2023Q4",
+          "revenue": 40.111,
+          "netIncome": 14.017,
+          "grossMargin": 80.8
+        },
+        {
+          "quarter": "2024Q1",
+          "revenue": 36.455,
+          "netIncome": 12.369,
+          "grossMargin": 81.8
+        },
+        {
+          "quarter": "2024Q2",
+          "revenue": 39.071,
+          "netIncome": 13.465,
+          "grossMargin": 81.3
+        },
+        {
+          "quarter": "2024Q3",
+          "revenue": 40.589,
+          "netIncome": 15.688,
+          "grossMargin": 81.8
+        },
+        {
+          "quarter": "2024Q4",
+          "revenue": 48.385,
+          "netIncome": 20.838,
+          "grossMargin": 81.7
+        },
+        {
+          "quarter": "2025Q1",
+          "revenue": 42.314,
+          "netIncome": 16.644,
+          "grossMargin": 82.1
+        },
+        {
+          "quarter": "2025Q2",
+          "revenue": 47.516,
+          "netIncome": 18.337,
+          "grossMargin": 82.1
+        },
+        {
+          "quarter": "2025Q3",
+          "revenue": 51.242,
+          "netIncome": 2.709,
+          "grossMargin": 82
+        },
+        {
+          "quarter": "2025Q4",
+          "revenue": 59.893,
+          "netIncome": 22.768,
+          "grossMargin": 81.8
+        }
+      ]
+    },
+    {
+      "name": "Microsoft",
+      "quarters": [
+        {
+          "quarter": "2019Q1",
+          "revenue": 29.084,
+          "netIncome": 8.824,
+          "grossMargin": 65.9
+        },
+        {
+          "quarter": "2019Q2",
+          "revenue": 32.471,
+          "netIncome": 8.42,
+          "grossMargin": 61.7
+        },
+        {
+          "quarter": "2019Q3",
+          "revenue": 30.571,
+          "netIncome": 8.809,
+          "grossMargin": 66.7
+        },
+        {
+          "quarter": "2019Q4",
+          "revenue": 33.717,
+          "netIncome": 13.187,
+          "grossMargin": 69.1
+        },
+        {
+          "quarter": "2020Q1",
+          "revenue": 33.055,
+          "netIncome": 10.678,
+          "grossMargin": 68.5
+        },
+        {
+          "quarter": "2020Q2",
+          "revenue": 36.906,
+          "netIncome": 11.649,
+          "grossMargin": 66.5
+        },
+        {
+          "quarter": "2020Q3",
+          "revenue": 35.021,
+          "netIncome": 10.752,
+          "grossMargin": 68.7
+        },
+        {
+          "quarter": "2020Q4",
+          "revenue": 38.033,
+          "netIncome": 11.202,
+          "grossMargin": 67.6
+        },
+        {
+          "quarter": "2021Q1",
+          "revenue": 37.154,
+          "netIncome": 13.893,
+          "grossMargin": 70.4
+        },
+        {
+          "quarter": "2021Q2",
+          "revenue": 43.076,
+          "netIncome": 15.463,
+          "grossMargin": 67
+        },
+        {
+          "quarter": "2021Q3",
+          "revenue": 41.706,
+          "netIncome": 15.457,
+          "grossMargin": 68.7
+        },
+        {
+          "quarter": "2021Q4",
+          "revenue": 46.152,
+          "netIncome": 16.458,
+          "grossMargin": 69.7
+        },
+        {
+          "quarter": "2022Q1",
+          "revenue": 45.317,
+          "netIncome": 20.505,
+          "grossMargin": 69.9
+        },
+        {
+          "quarter": "2022Q2",
+          "revenue": 51.728,
+          "netIncome": 18.765,
+          "grossMargin": 67.2
+        },
+        {
+          "quarter": "2022Q3",
+          "revenue": 49.36,
+          "netIncome": 16.728,
+          "grossMargin": 68.4
+        },
+        {
+          "quarter": "2022Q4",
+          "revenue": 51.865,
+          "netIncome": 16.74,
+          "grossMargin": 68.3
+        },
+        {
+          "quarter": "2023Q1",
+          "revenue": 50.122,
+          "netIncome": 17.556,
+          "grossMargin": 69.2
+        },
+        {
+          "quarter": "2023Q2",
+          "revenue": 52.747,
+          "netIncome": 16.425,
+          "grossMargin": 66.8
+        },
+        {
+          "quarter": "2023Q3",
+          "revenue": 52.857,
+          "netIncome": 18.299,
+          "grossMargin": 69.5
+        },
+        {
+          "quarter": "2023Q4",
+          "revenue": 56.189,
+          "netIncome": 20.081,
+          "grossMargin": 70.1
+        },
+        {
+          "quarter": "2024Q1",
+          "revenue": 56.517,
+          "netIncome": 22.291,
+          "grossMargin": 71.2
+        },
+        {
+          "quarter": "2024Q2",
+          "revenue": 62.02,
+          "netIncome": 21.87,
+          "grossMargin": 68.4
+        },
+        {
+          "quarter": "2024Q3",
+          "revenue": 61.858,
+          "netIncome": 21.939,
+          "grossMargin": 70.1
+        },
+        {
+          "quarter": "2024Q4",
+          "revenue": 64.727,
+          "netIncome": 22.036,
+          "grossMargin": 69.6
+        },
+        {
+          "quarter": "2025Q1",
+          "revenue": 65.585,
+          "netIncome": 24.667,
+          "grossMargin": 69.4
+        },
+        {
+          "quarter": "2025Q2",
+          "revenue": 69.632,
+          "netIncome": 24.108,
+          "grossMargin": 68.7
+        },
+        {
+          "quarter": "2025Q3",
+          "revenue": 70.066,
+          "netIncome": 25.824,
+          "grossMargin": 68.7
+        },
+        {
+          "quarter": "2025Q4",
+          "revenue": 76.441,
+          "netIncome": 27.233,
+          "grossMargin": 68.6
+        }
+      ]
+    },
+    {
+      "name": "Nvidia",
+      "quarters": [
+        {
+          "quarter": "2019Q1",
+          "revenue": 3.207,
+          "netIncome": 1.244,
+          "grossMargin": 64.5
+        },
+        {
+          "quarter": "2019Q2",
+          "revenue": 3.123,
+          "netIncome": 1.101,
+          "grossMargin": 63.2
+        },
+        {
+          "quarter": "2019Q3",
+          "revenue": 3.181,
+          "netIncome": 1.23,
+          "grossMargin": 60.4
+        },
+        {
+          "quarter": "2019Q4",
+          "revenue": 2.205,
+          "netIncome": 0.567,
+          "grossMargin": 54.7
+        },
+        {
+          "quarter": "2020Q1",
+          "revenue": 2.22,
+          "netIncome": 0.394,
+          "grossMargin": 58.4
+        },
+        {
+          "quarter": "2020Q2",
+          "revenue": 2.579,
+          "netIncome": 0.552,
+          "grossMargin": 59.8
+        },
+        {
+          "quarter": "2020Q3",
+          "revenue": 3.014,
+          "netIncome": 0.899,
+          "grossMargin": 63.6
+        },
+        {
+          "quarter": "2020Q4",
+          "revenue": 3.105,
+          "netIncome": 0.95,
+          "grossMargin": 64.9
+        },
+        {
+          "quarter": "2021Q1",
+          "revenue": 3.08,
+          "netIncome": 0.917,
+          "grossMargin": 65.1
+        },
+        {
+          "quarter": "2021Q2",
+          "revenue": 3.866,
+          "netIncome": 0.622,
+          "grossMargin": 58.8
+        },
+        {
+          "quarter": "2021Q3",
+          "revenue": 4.726,
+          "netIncome": 1.336,
+          "grossMargin": 62.6
+        },
+        {
+          "quarter": "2021Q4",
+          "revenue": 5.003,
+          "netIncome": 1.457,
+          "grossMargin": 63.1
+        },
+        {
+          "quarter": "2022Q1",
+          "revenue": 5.661,
+          "netIncome": 1.912,
+          "grossMargin": 64.1
+        },
+        {
+          "quarter": "2022Q2",
+          "revenue": 6.507,
+          "netIncome": 2.374,
+          "grossMargin": 64.8
+        },
+        {
+          "quarter": "2022Q3",
+          "revenue": 7.103,
+          "netIncome": 2.464,
+          "grossMargin": 65.2
+        },
+        {
+          "quarter": "2022Q4",
+          "revenue": 7.643,
+          "netIncome": 3.003,
+          "grossMargin": 65.4
+        },
+        {
+          "quarter": "2023Q1",
+          "revenue": 8.288,
+          "netIncome": 2.971,
+          "grossMargin": 65.5
+        },
+        {
+          "quarter": "2023Q2",
+          "revenue": 6.704,
+          "netIncome": 0.656,
+          "grossMargin": 43.5
+        },
+        {
+          "quarter": "2023Q3",
+          "revenue": 5.931,
+          "netIncome": 0.68,
+          "grossMargin": 53.6
+        },
+        {
+          "quarter": "2023Q4",
+          "revenue": 6.051,
+          "netIncome": 1.414,
+          "grossMargin": 63.3
+        },
+        {
+          "quarter": "2024Q1",
+          "revenue": 7.192,
+          "netIncome": 2.043,
+          "grossMargin": 64.6
+        },
+        {
+          "quarter": "2024Q2",
+          "revenue": 13.507,
+          "netIncome": 6.188,
+          "grossMargin": 70.1
+        },
+        {
+          "quarter": "2024Q3",
+          "revenue": 18.12,
+          "netIncome": 9.243,
+          "grossMargin": 74
+        },
+        {
+          "quarter": "2024Q4",
+          "revenue": 22.103,
+          "netIncome": 12.285,
+          "grossMargin": 76
+        },
+        {
+          "quarter": "2025Q1",
+          "revenue": 26.044,
+          "netIncome": 14.881,
+          "grossMargin": 78.4
+        },
+        {
+          "quarter": "2025Q2",
+          "revenue": 30.04,
+          "netIncome": 16.599,
+          "grossMargin": 75.1
+        },
+        {
+          "quarter": "2025Q3",
+          "revenue": 35.082,
+          "netIncome": 19.309,
+          "grossMargin": 74.6
+        },
+        {
+          "quarter": "2025Q4",
+          "revenue": 39.331,
+          "netIncome": 22.091,
+          "grossMargin": 73
+        }
+      ]
+    },
+    {
+      "name": "Tesla",
+      "quarters": [
+        {
+          "quarter": "2019Q1",
+          "revenue": 4.541,
+          "netIncome": -0.668,
+          "grossMargin": 12.5
+        },
+        {
+          "quarter": "2019Q2",
+          "revenue": 6.35,
+          "netIncome": -0.389,
+          "grossMargin": 14.5
+        },
+        {
+          "quarter": "2019Q3",
+          "revenue": 6.303,
+          "netIncome": 0.15,
+          "grossMargin": 18.9
+        },
+        {
+          "quarter": "2019Q4",
+          "revenue": 7.384,
+          "netIncome": 0.12,
+          "grossMargin": 18.8
+        },
+        {
+          "quarter": "2020Q1",
+          "revenue": 5.985,
+          "netIncome": 0.068,
+          "grossMargin": 20.6
+        },
+        {
+          "quarter": "2020Q2",
+          "revenue": 6.036,
+          "netIncome": 0.129,
+          "grossMargin": 21
+        },
+        {
+          "quarter": "2020Q3",
+          "revenue": 8.771,
+          "netIncome": 0.369,
+          "grossMargin": 23.5
+        },
+        {
+          "quarter": "2020Q4",
+          "revenue": 10.744,
+          "netIncome": 0.296,
+          "grossMargin": 19.2
+        },
+        {
+          "quarter": "2021Q1",
+          "revenue": 10.389,
+          "netIncome": 0.464,
+          "grossMargin": 21.3
+        },
+        {
+          "quarter": "2021Q2",
+          "revenue": 11.958,
+          "netIncome": 1.178,
+          "grossMargin": 24.1
+        },
+        {
+          "quarter": "2021Q3",
+          "revenue": 13.757,
+          "netIncome": 1.659,
+          "grossMargin": 26.6
+        },
+        {
+          "quarter": "2021Q4",
+          "revenue": 17.719,
+          "netIncome": 2.343,
+          "grossMargin": 27.4
+        },
+        {
+          "quarter": "2022Q1",
+          "revenue": 18.756,
+          "netIncome": 3.28,
+          "grossMargin": 29.1
+        },
+        {
+          "quarter": "2022Q2",
+          "revenue": 16.934,
+          "netIncome": 2.269,
+          "grossMargin": 25
+        },
+        {
+          "quarter": "2022Q3",
+          "revenue": 21.454,
+          "netIncome": 3.331,
+          "grossMargin": 25.1
+        },
+        {
+          "quarter": "2022Q4",
+          "revenue": 24.318,
+          "netIncome": 3.707,
+          "grossMargin": 23.8
+        },
+        {
+          "quarter": "2023Q1",
+          "revenue": 23.329,
+          "netIncome": 2.539,
+          "grossMargin": 19.3
+        },
+        {
+          "quarter": "2023Q2",
+          "revenue": 24.927,
+          "netIncome": 2.614,
+          "grossMargin": 18.2
+        },
+        {
+          "quarter": "2023Q3",
+          "revenue": 23.35,
+          "netIncome": 1.878,
+          "grossMargin": 17.9
+        },
+        {
+          "quarter": "2023Q4",
+          "revenue": 25.167,
+          "netIncome": 7.943,
+          "grossMargin": 17.6
+        },
+        {
+          "quarter": "2024Q1",
+          "revenue": 21.301,
+          "netIncome": 1.405,
+          "grossMargin": 17.4
+        },
+        {
+          "quarter": "2024Q2",
+          "revenue": 25.5,
+          "netIncome": 1.416,
+          "grossMargin": 18
+        },
+        {
+          "quarter": "2024Q3",
+          "revenue": 25.182,
+          "netIncome": 2.189,
+          "grossMargin": 19.8
+        },
+        {
+          "quarter": "2024Q4",
+          "revenue": 25.707,
+          "netIncome": 2.143,
+          "grossMargin": 16.3
+        },
+        {
+          "quarter": "2025Q1",
+          "revenue": 19.335,
+          "netIncome": 0.42,
+          "grossMargin": 16.3
+        },
+        {
+          "quarter": "2025Q2",
+          "revenue": 22.496,
+          "netIncome": 1.19,
+          "grossMargin": 17.2
+        },
+        {
+          "quarter": "2025Q3",
+          "revenue": 28.095,
+          "netIncome": 1.389,
+          "grossMargin": 18
+        },
+        {
+          "quarter": "2025Q4",
+          "revenue": 24.901,
+          "netIncome": 0.856,
+          "grossMargin": 20.1
+        }
+      ]
+    }
+  ]
+}
