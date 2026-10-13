@@ -21,8 +21,8 @@ ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 /** Newest four quarters, newest first. */
 const keys = lastQuarterKeys(4).reverse();
 
-/** Colors from the design: bright for the newest quarter, darker for older ones. */
-const shades = ["#39daff", "#31bfe2", "#29a5c5", "#218aa8"];
+/** Bright for the newest quarter, fading to darker blue for older ones. */
+const shades = ["#00e5ff", "#00b0ff", "#2979ff", "#304ffe"];
 
 const chartData = computed(() => ({
   labels: FIRMS.map((f) => f.label),

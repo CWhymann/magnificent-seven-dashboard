@@ -15,15 +15,15 @@ export interface Firm {
   quarters: QuarterData[];
 }
 
-/** Display names, sheet names and colors, as in the Figma design. */
+/** Display names, sheet names and colors. Colors are chosen to be clearly distinct. */
 const FIRM_STYLE = [
-  { label: "Apple", source: "Apple", color: "#196f8c" },
-  { label: "Meta", source: "Meta", color: "#39daff" },
-  { label: "Microsoft", source: "Microsoft", color: "#218aa8" },
-  { label: "Google", source: "Alphabet", color: "#11546f" },
-  { label: "Amazon", source: "Amazon", color: "#093a52" },
-  { label: "Tesla", source: "Tesla", color: "#31bfe2" },
-  { label: "Nvidia", source: "Nvidia", color: "#29a5c5" },
+  { label: "Apple", source: "Apple", color: "#00e5ff" },
+  { label: "Meta", source: "Meta", color: "#2979ff" },
+  { label: "Microsoft", source: "Microsoft", color: "#00e676" },
+  { label: "Google", source: "Alphabet", color: "#ffd600" },
+  { label: "Amazon", source: "Amazon", color: "#ff9100" },
+  { label: "Tesla", source: "Tesla", color: "#ff1744" },
+  { label: "Nvidia", source: "Nvidia", color: "#d500f9" },
 ];
 
 /** All seven firms in the order of the design. */
