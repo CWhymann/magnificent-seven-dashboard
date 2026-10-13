@@ -6,9 +6,9 @@ defineProps<{ title: string }>();
   <article
     class="flex min-h-0 flex-col gap-3 rounded-2xl bg-panel p-4 text-white sm:gap-4 sm:p-5"
   >
-    <h2 class="text-base font-semibold sm:text-xl">{{ title }}</h2>
+    <h2 class="text-sm font-semibold sm:text-xl">{{ title }}</h2>
     <div
-      class="flex min-h-0 flex-1 items-center justify-center text-sm text-white/50"
+      class="flex min-h-0 flex-1 items-center justify-center py-2 text-sm text-white/50"
     >
       <slot>Placeholder, chart follows</slot>
     </div>
