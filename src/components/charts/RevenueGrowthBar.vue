@@ -15,6 +15,7 @@ import {
   longQuarter,
   yoyGrowth,
 } from "../../data/metrics";
+import { useNarrow } from "../../composables/useNarrow";
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 
@@ -23,6 +24,8 @@ const keys = lastQuarterKeys(4).reverse();
 
 /** Bright for the newest quarter, fading to darker blue for older ones. */
 const shades = ["#00e5ff", "#00b0ff", "#2979ff", "#304ffe"];
+
+const narrow = useNarrow();
 
 const chartData = computed(() => ({
   labels: FIRMS.map((f) => f.label),
@@ -35,13 +38,17 @@ const chartData = computed(() => ({
   })),
 }));
 
-const options = {
+const options = computed(() => ({
   responsive: true,
   maintainAspectRatio: false,
   plugins: {
     legend: {
-      position: "right" as const,
-      labels: { color: "#ffffff", boxWidth: 12, font: { size: 10 } },
+      position: (narrow.value ? "bottom" : "right") as "bottom" | "right",
+      labels: {
+        color: "#ffffff",
+        boxWidth: 10,
+        font: { size: narrow.value ? 9 : 10 },
+      },
     },
   },
   scales: {
@@ -54,7 +61,7 @@ const options = {
       grid: { color: "rgba(255,255,255,0.25)" },
     },
   },
-};
+}));
 </script>
 
 <template>

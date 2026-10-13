@@ -17,6 +17,7 @@ import {
   quarterOf,
   shortQuarter,
 } from "../../data/metrics";
+import { useNarrow } from "../../composables/useNarrow";
 
 ChartJS.register(
   CategoryScale,
@@ -29,6 +30,7 @@ ChartJS.register(
 
 /** The last twelve quarters, oldest first. */
 const keys = lastQuarterKeys(12);
+const narrow = useNarrow();
 
 const chartData = computed(() => ({
   labels: keys.map(shortQuarter),
@@ -45,14 +47,18 @@ const chartData = computed(() => ({
   })),
 }));
 
-const options = {
+const options = computed(() => ({
   responsive: true,
   maintainAspectRatio: false,
   interaction: { mode: "index" as const, intersect: false },
   plugins: {
     legend: {
-      position: "right" as const,
-      labels: { color: "#ffffff", boxWidth: 12, font: { size: 10 } },
+      position: (narrow.value ? "bottom" : "right") as "bottom" | "right",
+      labels: {
+        color: "#ffffff",
+        boxWidth: 10,
+        font: { size: narrow.value ? 9 : 10 },
+      },
     },
     tooltip: {
       callbacks: {
@@ -76,7 +82,7 @@ const options = {
       grid: { color: "rgba(255,255,255,0.25)" },
     },
   },
-};
+}));
 </script>
 
 <template>

@@ -3,8 +3,11 @@ import { computed } from "vue";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "vue-chartjs";
 import { FIRMS, longQuarter, ttm } from "../../data/metrics";
+import { useNarrow } from "../../composables/useNarrow";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
+
+const narrow = useNarrow();
 
 const chartData = computed(() => ({
   labels: FIRMS.map((f) => f.label),
@@ -18,13 +21,17 @@ const chartData = computed(() => ({
   ],
 }));
 
-const options = {
+const options = computed(() => ({
   responsive: true,
   maintainAspectRatio: false,
   plugins: {
     legend: {
-      position: "right" as const,
-      labels: { color: "#ffffff", boxWidth: 12, font: { size: 10 } },
+      position: (narrow.value ? "bottom" : "right") as "bottom" | "right",
+      labels: {
+        color: "#ffffff",
+        boxWidth: 10,
+        font: { size: narrow.value ? 9 : 10 },
+      },
     },
     tooltip: {
       callbacks: {
@@ -39,7 +46,7 @@ const options = {
       },
     },
   },
-};
+}));
 </script>
 
 <template>
