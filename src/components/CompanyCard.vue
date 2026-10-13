@@ -54,5 +54,9 @@ function signed(value: number): string {
     </div>
 
     <p class="text-[8px]">In Bill USD</p>
+    <p class="text-xs whitespace-nowrap text-white/60">
+      vs. {{ company.previousQuarterLabel }}:
+      {{ company.previousRevenue.toFixed(2) }}
+    </p>
   </article>
 </template>

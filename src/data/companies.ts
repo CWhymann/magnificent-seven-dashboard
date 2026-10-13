@@ -14,6 +14,8 @@ export interface Company {
   logo: string;
   quarterLabel: string;
   revenue: number;
+  previousQuarterLabel: string;
+  previousRevenue: number;
   change: number;
   changePercent: number;
 }
@@ -35,8 +37,8 @@ function formatQuarter(key: string): string {
 }
 
 /**
- * Builds one card per company: latest reported quarter, and the change
- * against the quarter before it.
+ * Builds one card per company: latest reported quarter, the quarter before it,
+ * and the change between the two.
  */
 function buildCompanies(): Company[] {
   return DISPLAY.map((item) => {
@@ -53,6 +55,8 @@ function buildCompanies(): Company[] {
       logo: item.logo,
       quarterLabel: formatQuarter(latest.quarter),
       revenue: latest.revenue,
+      previousQuarterLabel: formatQuarter(previous.quarter),
+      previousRevenue: previous.revenue,
       change,
       changePercent: (change / previous.revenue) * 100,
     };
