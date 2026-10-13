@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { onMounted, onUnmounted, ref } from "vue";
 import CompanyCard from "./components/CompanyCard.vue";
 import CompanyDetail from "./components/CompanyDetail.vue";
 import ChartPanel from "./components/ChartPanel.vue";
@@ -12,10 +12,15 @@ import { companies } from "./data/companies";
 
 const strip = ref<HTMLElement | null>(null);
 const canScrollLeft = ref(false);
+const canScrollRight = ref(true);
 const selected = ref<string | null>(null);
 
+/** Shows or hides each arrow depending on whether the strip can scroll that way. */
 function updateScrollState(): void {
-  canScrollLeft.value = (strip.value?.scrollLeft ?? 0) > 4;
+  const el = strip.value;
+  if (!el) return;
+  canScrollLeft.value = el.scrollLeft > 4;
+  canScrollRight.value = el.scrollLeft + el.clientWidth < el.scrollWidth - 4;
 }
 
 /** Scrolls the strip by about one screen width, snapping to whole cards. */
@@ -31,6 +36,15 @@ function scrollStrip(direction: 1 | -1): void {
 function toggleSelected(name: string): void {
   selected.value = selected.value === name ? null : name;
 }
+
+onMounted(() => {
+  updateScrollState();
+  window.addEventListener("resize", updateScrollState);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("resize", updateScrollState);
+});
 </script>
 
 <template>
@@ -85,6 +99,7 @@ function toggleSelected(name: string): void {
       <button
         type="button"
         class="flex size-6 shrink-0 items-center justify-center rounded-full bg-accent text-panel sm:size-8"
+        :class="{ invisible: !canScrollRight }"
         aria-label="Show more companies"
         @click="scrollStrip(1)"
       >
