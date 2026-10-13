@@ -1,23 +1,16 @@
 import financials from "./financials.json";
 
-/** One reported quarter of a company, values in billions USD (gross margin in percent). */
-export interface Quarter {
-  quarter: string;
+/** One reported quarter as shown in a card. */
+export interface QuarterValue {
+  label: string;
   revenue: number;
-  netIncome: number;
-  grossMargin: number;
 }
 
-/** Data shown in one card of the company strip. */
+/** Data for one card: all reported quarters, oldest first. */
 export interface Company {
   name: string;
   logo: string;
-  quarterLabel: string;
-  revenue: number;
-  previousQuarterLabel: string;
-  previousRevenue: number;
-  change: number;
-  changePercent: number;
+  quarters: QuarterValue[];
 }
 
 /** Order and display names of the cards, as in the Figma design. */
@@ -36,29 +29,20 @@ function formatQuarter(key: string): string {
   return `Q${key.slice(5)} ${key.slice(0, 4)}`;
 }
 
-/**
- * Builds one card per company: latest reported quarter, the quarter before it,
- * and the change between the two.
- */
+/** Builds one card per company with all of its reported quarters. */
 function buildCompanies(): Company[] {
   return DISPLAY.map((item) => {
     const source = financials.companies.find((c) => c.name === item.source);
-    if (!source || source.quarters.length < 2) {
+    if (!source || source.quarters.length === 0) {
       throw new Error(`Keine Daten für ${item.name} in financials.json`);
     }
-    const quarters = source.quarters;
-    const latest = quarters[quarters.length - 1];
-    const previous = quarters[quarters.length - 2];
-    const change = latest.revenue - previous.revenue;
     return {
       name: item.name,
       logo: item.logo,
-      quarterLabel: formatQuarter(latest.quarter),
-      revenue: latest.revenue,
-      previousQuarterLabel: formatQuarter(previous.quarter),
-      previousRevenue: previous.revenue,
-      change,
-      changePercent: (change / previous.revenue) * 100,
+      quarters: source.quarters.map((q) => ({
+        label: formatQuarter(q.quarter),
+        revenue: q.revenue,
+      })),
     };
   });
 }
