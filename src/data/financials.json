@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-13T18:24:09.420Z",
+  "updatedAt": "2026-10-13T18:26:09.995Z",
   "chartQuarters": [
     "2019Q1",
     "2019Q2",
@@ -1217,18 +1217,6 @@
           "revenue": 81.273,
           "netIncome": 38.458,
           "grossMargin": 68
-        },
-        {
-          "quarter": "2026Q3",
-          "revenue": 82.886,
-          "netIncome": 31.778,
-          "grossMargin": 67.6
-        },
-        {
-          "quarter": "2026Q4",
-          "revenue": 90.007,
-          "netIncome": 35.766,
-          "grossMargin": 67.2
         }
       ]
     },
@@ -1438,30 +1426,6 @@
           "revenue": 46.743,
           "netIncome": 26.422,
           "grossMargin": 72.4
-        },
-        {
-          "quarter": "2026Q3",
-          "revenue": 57.006,
-          "netIncome": 31.91,
-          "grossMargin": 73.4
-        },
-        {
-          "quarter": "2026Q4",
-          "revenue": 68.127,
-          "netIncome": 42.96,
-          "grossMargin": 75
-        },
-        {
-          "quarter": "2027Q1",
-          "revenue": 81.615,
-          "netIncome": 58.321,
-          "grossMargin": 74.9
-        },
-        {
-          "quarter": "2027Q2",
-          "revenue": 96.221,
-          "netIncome": 59.688,
-          "grossMargin": 75
         }
       ]
     },

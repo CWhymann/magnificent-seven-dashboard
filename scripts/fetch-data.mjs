@@ -255,6 +255,26 @@ export function buildCompany(source, rows) {
   return data;
 }
 
+/** Days after quarter end until a quarter is treated as reported. */
+const REPORTING_LAG_DAYS = 45;
+
+/**
+ * Checks whether a quarter is far enough in the past to be reported.
+ * Filters out future quarters that may only contain estimates.
+ *
+ * @param {string} quarter - Quarter key like '2026Q2'.
+ * @param {Date} [now=new Date()] - Reference date.
+ * @returns {boolean} True if the quarter is reported.
+ */
+export function isReported(quarter, now = new Date()) {
+  const year = Number(quarter.slice(0, 4));
+  const qn = Number(quarter.slice(5));
+  const quarterEnd = new Date(Date.UTC(year, qn * 3, 0));
+  const reportedAt =
+    quarterEnd.getTime() + REPORTING_LAG_DAYS * 24 * 60 * 60 * 1000;
+  return reportedAt <= now.getTime();
+}
+
 /**
  * Returns the quarters for which one company has revenue, net income and gross margin.
  * Used for the cards, so that each company shows its own latest reported quarter.
@@ -267,7 +287,10 @@ export function ownCompleteQuarters(data) {
     .filter((q) => {
       const v = data[q];
       return (
-        v.revenue !== null && v.netIncome !== null && v.grossMargin !== null
+        v.revenue !== null &&
+        v.netIncome !== null &&
+        v.grossMargin !== null &&
+        isReported(q)
       );
     })
     .sort();
@@ -283,6 +306,7 @@ export function ownCompleteQuarters(data) {
 export function completeQuarters(companies) {
   const all = new Set(companies.flatMap((c) => Object.keys(c.data)));
   return [...all]
+    .filter((q) => isReported(q))
     .filter((q) =>
       companies.every((c) => {
         const v = c.data[q];
