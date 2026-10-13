@@ -18,8 +18,13 @@ function updateScrollState(): void {
   canScrollLeft.value = (strip.value?.scrollLeft ?? 0) > 4;
 }
 
+/** Scrolls the strip by about one screen width, snapping to whole cards. */
 function scrollStrip(direction: 1 | -1): void {
-  strip.value?.scrollBy({ left: 200 * direction, behavior: "smooth" });
+  if (!strip.value) return;
+  strip.value.scrollBy({
+    left: strip.value.clientWidth * 0.8 * direction,
+    behavior: "smooth",
+  });
 }
 
 /** Selects a firm, or clears the selection if it is already selected. */
@@ -40,18 +45,18 @@ function toggleSelected(name: string): void {
     </header>
 
     <div
-      class="flex items-center gap-2 rounded-[20px] bg-panel-wrap p-3 sm:gap-4 sm:p-6"
+      class="flex items-center gap-1 rounded-[20px] bg-panel-wrap p-2 sm:gap-4 sm:p-6"
     >
       <button
         type="button"
-        class="flex size-8 shrink-0 items-center justify-center rounded-full bg-accent text-panel"
+        class="flex size-6 shrink-0 items-center justify-center rounded-full bg-accent text-panel sm:size-8"
         :class="{ invisible: !canScrollLeft }"
         aria-label="Show previous companies"
         @click="scrollStrip(-1)"
       >
         <svg
           viewBox="0 0 24 24"
-          class="size-4"
+          class="size-3 sm:size-4"
           fill="none"
           stroke="currentColor"
           stroke-width="2.5"
@@ -64,7 +69,7 @@ function toggleSelected(name: string): void {
 
       <section
         ref="strip"
-        class="flex min-w-0 flex-1 gap-4 overflow-x-auto scrollbar-none sm:gap-6"
+        class="flex min-w-0 flex-1 snap-x snap-mandatory gap-3 overflow-x-auto py-2 scrollbar-none sm:gap-6"
         @scroll="updateScrollState"
       >
         <CompanyCard
@@ -72,20 +77,20 @@ function toggleSelected(name: string): void {
           :key="company.name"
           :company="company"
           :selected="selected === company.name"
-          class="w-52 shrink-0 sm:w-44"
+          class="w-52 shrink-0 snap-start sm:w-44"
           @select="toggleSelected"
         />
       </section>
 
       <button
         type="button"
-        class="flex size-8 shrink-0 items-center justify-center rounded-full bg-accent text-panel"
+        class="flex size-6 shrink-0 items-center justify-center rounded-full bg-accent text-panel sm:size-8"
         aria-label="Show more companies"
         @click="scrollStrip(1)"
       >
         <svg
           viewBox="0 0 24 24"
-          class="size-4"
+          class="size-3 sm:size-4"
           fill="none"
           stroke="currentColor"
           stroke-width="2.5"
