@@ -24,7 +24,7 @@ jobs:
       - name: Fetch financial data
         run: node scripts/fetch-data.mjs
 
-      - name: Commit changes if data changed
+      - name: Commit and push changes if data changed
         run: |
           if git diff --quiet -- src/data/financials.json; then
             echo "No changes in financial data."
@@ -34,4 +34,5 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add src/data/financials.json
           git commit -m "chore: update financial data"
+          git pull --rebase origin main
           git push
