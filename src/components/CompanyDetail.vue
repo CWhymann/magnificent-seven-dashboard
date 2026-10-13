@@ -39,7 +39,7 @@ const quarters = computed(() =>
 const rows = computed(() => [...quarters.value].reverse());
 
 const axis = {
-  ticks: { color: "#ffffff", font: { size: 8 } },
+  ticks: { color: "#ffffff", font: { size: 14 } },
   grid: { color: "rgba(255, 255, 255, 0.25)" },
 };
 

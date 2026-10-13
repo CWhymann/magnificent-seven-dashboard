@@ -54,11 +54,7 @@ const options = computed(() => ({
   plugins: {
     legend: {
       position: (narrow.value ? "bottom" : "right") as "bottom" | "right",
-      labels: {
-        color: "#ffffff",
-        boxWidth: 10,
-        font: { size: narrow.value ? 9 : 10 },
-      },
+      labels: { color: "#ffffff", boxWidth: 10, font: { size: 14 } },
     },
     tooltip: {
       callbacks: {
@@ -74,11 +70,11 @@ const options = computed(() => ({
   },
   scales: {
     x: {
-      ticks: { color: "#ffffff", font: { size: 8 } },
+      ticks: { color: "#ffffff", font: { size: 14 } },
       grid: { color: "rgba(255,255,255,0.25)" },
     },
     y: {
-      ticks: { color: "#ffffff", font: { size: 8 } },
+      ticks: { color: "#ffffff", font: { size: 14 } },
       grid: { color: "rgba(255,255,255,0.25)" },
     },
   },

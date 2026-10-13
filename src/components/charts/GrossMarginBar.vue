@@ -47,11 +47,11 @@ const options = {
   },
   scales: {
     x: {
-      ticks: { color: "#ffffff", font: { size: 8 } },
+      ticks: { color: "#ffffff", font: { size: 14 } },
       grid: { color: "rgba(255,255,255,0.25)" },
     },
     y: {
-      ticks: { color: "#ffffff", font: { size: 9 } },
+      ticks: { color: "#ffffff", font: { size: 14 } },
       grid: { display: false },
     },
   },

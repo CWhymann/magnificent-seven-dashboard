@@ -27,11 +27,7 @@ const options = computed(() => ({
   plugins: {
     legend: {
       position: (narrow.value ? "bottom" : "right") as "bottom" | "right",
-      labels: {
-        color: "#ffffff",
-        boxWidth: 10,
-        font: { size: narrow.value ? 9 : 10 },
-      },
+      labels: { color: "#ffffff", boxWidth: 10, font: { size: 14 } },
     },
     tooltip: {
       callbacks: {
@@ -50,7 +46,7 @@ const options = computed(() => ({
 </script>
 
 <template>
-  <div class="relative h-full w-full">
+  <div class="relative mx-auto h-full max-h-80 w-full">
     <Doughnut :data="chartData" :options="options" />
   </div>
 </template>
