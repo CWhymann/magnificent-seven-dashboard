@@ -50,4 +50,11 @@ export const companies: Company[] = [
     change: 4.22,
     changePercent: 2.43,
   },
+  {
+    name: "Nvidia",
+    logo: "/logos/nvidia.svg",
+    revenue: 38.52,
+    change: 1.06,
+    changePercent: 2.83,
+  },
 ];
