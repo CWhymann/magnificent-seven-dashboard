@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import CompanyCard from "./components/CompanyCard.vue";
+import CompanyDetail from "./components/CompanyDetail.vue";
 import ChartPanel from "./components/ChartPanel.vue";
 import RevenueLineChart from "./components/charts/RevenueLineChart.vue";
 import RevenueDonut from "./components/charts/RevenueDonut.vue";
@@ -11,6 +12,7 @@ import { companies } from "./data/companies";
 
 const strip = ref<HTMLElement | null>(null);
 const canScrollLeft = ref(false);
+const selected = ref<string | null>(null);
 
 function updateScrollState(): void {
   canScrollLeft.value = (strip.value?.scrollLeft ?? 0) > 4;
@@ -18,6 +20,11 @@ function updateScrollState(): void {
 
 function scrollStrip(direction: 1 | -1): void {
   strip.value?.scrollBy({ left: 200 * direction, behavior: "smooth" });
+}
+
+/** Selects a firm, or clears the selection if it is already selected. */
+function toggleSelected(name: string): void {
+  selected.value = selected.value === name ? null : name;
 }
 </script>
 
@@ -35,7 +42,7 @@ function scrollStrip(direction: 1 | -1): void {
         type="button"
         class="flex size-8 shrink-0 items-center justify-center rounded-full bg-accent text-panel"
         :class="{ invisible: !canScrollLeft }"
-        aria-label="Vorherige Firmen anzeigen"
+        aria-label="Show previous companies"
         @click="scrollStrip(-1)"
       >
         <svg
@@ -60,14 +67,16 @@ function scrollStrip(direction: 1 | -1): void {
           v-for="company in companies"
           :key="company.name"
           :company="company"
+          :selected="selected === company.name"
           class="w-44 shrink-0"
+          @select="toggleSelected"
         />
       </section>
 
       <button
         type="button"
         class="flex size-8 shrink-0 items-center justify-center rounded-full bg-accent text-panel"
-        aria-label="Weitere Firmen anzeigen"
+        aria-label="Show more companies"
         @click="scrollStrip(1)"
       >
         <svg
@@ -83,6 +92,8 @@ function scrollStrip(direction: 1 | -1): void {
         </svg>
       </button>
     </div>
+
+    <CompanyDetail v-if="selected" :name="selected" @close="selected = null" />
 
     <section class="grid grid-cols-1 gap-8 xl:grid-cols-[714px_minmax(0,1fr)]">
       <ChartPanel title="Revenue last 3 years" class="h-88">

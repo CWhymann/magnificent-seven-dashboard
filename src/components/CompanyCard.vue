@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
 import type { Company } from "../data/companies";
+import { FIRMS } from "../data/metrics";
 
-const props = defineProps<{ company: Company }>();
+const props = defineProps<{ company: Company; selected: boolean }>();
+const emit = defineEmits<{ select: [name: string] }>();
 
 /** Index of the shown quarter. Starts on the latest reported quarter. */
 const index = ref(props.company.quarters.length - 1);
@@ -21,6 +23,9 @@ const positive = computed(() => change.value >= 0);
 const isLatest = computed(
   () => index.value === props.company.quarters.length - 1,
 );
+const color = computed(
+  () => FIRMS.find((f) => f.label === props.company.name)?.color ?? "#39daff",
+);
 
 function signed(value: number): string {
   return (value > 0 ? "+" : "") + value.toFixed(2);
@@ -34,7 +39,13 @@ function step(delta: number): void {
 
 <template>
   <article
-    class="flex flex-col gap-2 rounded-2xl bg-panel px-6 py-5 text-white"
+    role="button"
+    tabindex="0"
+    :aria-pressed="selected"
+    class="flex cursor-pointer flex-col gap-2 rounded-2xl bg-panel px-6 py-5 text-white"
+    :style="selected ? { boxShadow: `0 0 0 2px ${color}` } : undefined"
+    @click="emit('select', company.name)"
+    @keydown.enter.prevent="emit('select', company.name)"
   >
     <div class="flex items-center gap-2">
       <img :src="company.logo" :alt="company.name" class="size-5" />
@@ -48,8 +59,8 @@ function step(delta: number): void {
           type="button"
           class="flex size-5 items-center justify-center rounded-full bg-accent text-panel disabled:opacity-30"
           :disabled="index === 0"
-          aria-label="Vorheriges Quartal"
-          @click="step(-1)"
+          aria-label="Previous quarter"
+          @click.stop="step(-1)"
         >
           <svg
             viewBox="0 0 24 24"
@@ -67,8 +78,8 @@ function step(delta: number): void {
           type="button"
           class="flex size-5 items-center justify-center rounded-full bg-accent text-panel disabled:opacity-30"
           :disabled="isLatest"
-          aria-label="Nächstes Quartal"
-          @click="step(1)"
+          aria-label="Next quarter"
+          @click.stop="step(1)"
         >
           <svg
             viewBox="0 0 24 24"
