@@ -2,6 +2,11 @@
 import { ref } from "vue";
 import CompanyCard from "./components/CompanyCard.vue";
 import ChartPanel from "./components/ChartPanel.vue";
+import RevenueLineChart from "./components/charts/RevenueLineChart.vue";
+import RevenueDonut from "./components/charts/RevenueDonut.vue";
+import NetIncomeBar from "./components/charts/NetIncomeBar.vue";
+import GrossMarginBar from "./components/charts/GrossMarginBar.vue";
+import RevenueGrowthBar from "./components/charts/RevenueGrowthBar.vue";
 import { companies } from "./data/companies";
 
 const strip = ref<HTMLElement | null>(null);
@@ -80,16 +85,26 @@ function scrollStrip(direction: 1 | -1): void {
     </div>
 
     <section class="grid grid-cols-1 gap-8 xl:grid-cols-[714px_minmax(0,1fr)]">
-      <ChartPanel title="Revenue last 3 years" class="h-88" />
-      <ChartPanel title="Revenue Breakdown Magnificent Seven" class="h-88" />
+      <ChartPanel title="Revenue last 3 years" class="h-88">
+        <RevenueLineChart />
+      </ChartPanel>
+      <ChartPanel title="Revenue Breakdown Magnificent Seven" class="h-88">
+        <RevenueDonut />
+      </ChartPanel>
     </section>
 
     <section
       class="grid grid-cols-1 gap-8 xl:grid-cols-[minmax(0,1fr)_293px_491px]"
     >
-      <ChartPanel title="Net Income TTM" class="h-74" />
-      <ChartPanel title="Gross Margin in % LQ" class="h-74" />
-      <ChartPanel title="Revenue Growth in % YoY" class="h-74" />
+      <ChartPanel title="Net Income TTM" class="h-74">
+        <NetIncomeBar />
+      </ChartPanel>
+      <ChartPanel title="Gross Margin in % LQ" class="h-74">
+        <GrossMarginBar />
+      </ChartPanel>
+      <ChartPanel title="Revenue Growth in % YoY" class="h-74">
+        <RevenueGrowthBar />
+      </ChartPanel>
     </section>
   </main>
 </template>
