@@ -256,8 +256,26 @@ export function buildCompany(source, rows) {
 }
 
 /**
+ * Returns the quarters for which one company has revenue, net income and gross margin.
+ * Used for the cards, so that each company shows its own latest reported quarter.
+ *
+ * @param {Record<string, { revenue: number | null, netIncome: number | null, grossMargin: number | null }>} data - One company's values keyed by quarter.
+ * @returns {string[]} Sorted quarter keys, oldest first.
+ */
+export function ownCompleteQuarters(data) {
+  return Object.keys(data)
+    .filter((q) => {
+      const v = data[q];
+      return (
+        v.revenue !== null && v.netIncome !== null && v.grossMargin !== null
+      );
+    })
+    .sort();
+}
+
+/**
  * Returns the quarters for which every company has revenue, net income and gross margin.
- * Quarters with missing values, for example estimates in only some tabs, are excluded.
+ * Used for the charts, so that all companies share the same time axis.
  *
  * @param {{ name: string, data: Record<string, object> }[]} companies - Parsed data per company.
  * @returns {string[]} Sorted quarter keys, oldest first.
@@ -299,22 +317,34 @@ async function main() {
     console.log(`${source.name}: ${rows.length} Zeilen gelesen`);
   }
 
-  const quarters = completeQuarters(companies);
-  if (quarters.length === 0)
+  const chartQuarters = completeQuarters(companies);
+  if (chartQuarters.length === 0)
     throw new Error("Kein Quartal ist in allen Tabs vollständig");
 
   const output = {
     updatedAt: new Date().toISOString(),
-    latestQuarter: quarters[quarters.length - 1],
-    companies: companies.map((c) => ({
-      name: c.name,
-      quarters: quarters.map((q) => ({ quarter: q, ...c.data[q] })),
-    })),
+    chartQuarters,
+    companies: companies.map((c) => {
+      const quarters = ownCompleteQuarters(c.data);
+      if (quarters.length === 0)
+        throw new Error(`${c.name}: keine vollständigen Quartale`);
+      return {
+        name: c.name,
+        quarters: quarters.map((q) => ({ quarter: q, ...c.data[q] })),
+      };
+    }),
   };
 
   await writeFile(OUTPUT, JSON.stringify(output, null, 2) + "\n", "utf8");
   console.log(`Geschrieben: ${OUTPUT}`);
-  console.log(`Neuestes vollständiges Quartal: ${output.latestQuarter}`);
+  console.log(
+    `Diagramm-Quartale: ${chartQuarters[0]} bis ${chartQuarters[chartQuarters.length - 1]}`,
+  );
+  for (const c of output.companies) {
+    console.log(
+      `${c.name}: neuestes Quartal ${c.quarters[c.quarters.length - 1].quarter}`,
+    );
+  }
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
