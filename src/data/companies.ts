@@ -1,60 +1,62 @@
+import financials from "./financials.json";
+
+/** One reported quarter of a company, values in billions USD (gross margin in percent). */
+export interface Quarter {
+  quarter: string;
+  revenue: number;
+  netIncome: number;
+  grossMargin: number;
+}
+
+/** Data shown in one card of the company strip. */
 export interface Company {
   name: string;
   logo: string;
+  quarterLabel: string;
   revenue: number;
   change: number;
   changePercent: number;
 }
 
-// Platzhalterwerte aus dem Figma-Design. Werden in Schritt 3 durch die Daten aus dem Sheet ersetzt.
-export const companies: Company[] = [
-  {
-    name: "Apple",
-    logo: "/logos/apple.svg",
-    revenue: 38.52,
-    change: 1.06,
-    changePercent: 2.83,
-  },
-  {
-    name: "Meta",
-    logo: "/logos/meta.svg",
-    revenue: 435.57,
-    change: -5.81,
-    changePercent: -1.32,
-  },
-  {
-    name: "Microsoft",
-    logo: "/logos/microsoft.svg",
-    revenue: 409.05,
-    change: 1.7,
-    changePercent: 2.51,
-  },
-  {
-    name: "Google",
-    logo: "/logos/google.svg",
-    revenue: 29.87,
-    change: 1.7,
-    changePercent: 6.04,
-  },
-  {
-    name: "Amazon",
-    logo: "/logos/amazon.svg",
-    revenue: 117.89,
-    change: 4.22,
-    changePercent: 2.43,
-  },
-  {
-    name: "Tesla",
-    logo: "/logos/tesla.svg",
-    revenue: 177.89,
-    change: 4.22,
-    changePercent: 2.43,
-  },
-  {
-    name: "Nvidia",
-    logo: "/logos/nvidia.svg",
-    revenue: 38.52,
-    change: 1.06,
-    changePercent: 2.83,
-  },
+/** Order and display names of the cards, as in the Figma design. */
+const DISPLAY: { name: string; source: string; logo: string }[] = [
+  { name: "Apple", source: "Apple", logo: "/logos/apple.svg" },
+  { name: "Meta", source: "Meta", logo: "/logos/meta.svg" },
+  { name: "Microsoft", source: "Microsoft", logo: "/logos/microsoft.svg" },
+  { name: "Google", source: "Alphabet", logo: "/logos/google.svg" },
+  { name: "Amazon", source: "Amazon", logo: "/logos/amazon.svg" },
+  { name: "Tesla", source: "Tesla", logo: "/logos/tesla.svg" },
+  { name: "Nvidia", source: "Nvidia", logo: "/logos/nvidia.svg" },
 ];
+
+/** Converts "2026Q2" into "Q2 2026". */
+function formatQuarter(key: string): string {
+  return `Q${key.slice(5)} ${key.slice(0, 4)}`;
+}
+
+/**
+ * Builds one card per company: latest reported quarter, and the change
+ * against the quarter before it.
+ */
+function buildCompanies(): Company[] {
+  return DISPLAY.map((item) => {
+    const source = financials.companies.find((c) => c.name === item.source);
+    if (!source || source.quarters.length < 2) {
+      throw new Error(`Keine Daten für ${item.name} in financials.json`);
+    }
+    const quarters = source.quarters;
+    const latest = quarters[quarters.length - 1];
+    const previous = quarters[quarters.length - 2];
+    const change = latest.revenue - previous.revenue;
+    return {
+      name: item.name,
+      logo: item.logo,
+      quarterLabel: formatQuarter(latest.quarter),
+      revenue: latest.revenue,
+      change,
+      changePercent: (change / previous.revenue) * 100,
+    };
+  });
+}
+
+export const companies: Company[] = buildCompanies();

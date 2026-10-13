@@ -20,7 +20,7 @@ function signed(value: number): string {
       <h3 class="text-xl font-medium whitespace-nowrap">{{ company.name }}</h3>
     </div>
 
-    <p class="text-xs whitespace-nowrap">Revenue Q1 2024</p>
+    <p class="text-xs whitespace-nowrap">Revenue {{ company.quarterLabel }}</p>
 
     <div class="flex items-center justify-between gap-2">
       <span class="text-2xl font-medium">{{ company.revenue.toFixed(2) }}</span>
