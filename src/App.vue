@@ -69,7 +69,7 @@ function toggleSelected(name: string): void {
 
       <section
         ref="strip"
-        class="flex min-w-0 flex-1 snap-x snap-mandatory gap-3 overflow-x-auto py-2 scrollbar-none sm:gap-6"
+        class="flex min-w-0 flex-1 snap-x snap-mandatory scroll-px-2 gap-3 overflow-x-auto px-2 py-2 scrollbar-none sm:gap-6"
         @scroll="updateScrollState"
       >
         <CompanyCard
