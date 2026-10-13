@@ -1,7 +1,14 @@
 <script setup lang="ts">
+import { ref } from "vue";
 import CompanyCard from "./components/CompanyCard.vue";
 import ChartPanel from "./components/ChartPanel.vue";
 import { companies } from "./data/companies";
+
+const strip = ref<HTMLElement | null>(null);
+
+function scrollStrip(): void {
+  strip.value?.scrollBy({ left: 200, behavior: "smooth" });
+}
 </script>
 
 <template>
@@ -13,15 +20,38 @@ import { companies } from "./data/companies";
       </h1>
     </header>
 
-    <section
-      class="grid grid-cols-2 gap-6 rounded-[20px] bg-panel-wrap p-6 sm:grid-cols-3 xl:grid-cols-6"
-    >
-      <CompanyCard
-        v-for="company in companies"
-        :key="company.name"
-        :company="company"
-      />
-    </section>
+    <div class="flex items-center gap-4 rounded-[20px] bg-panel-wrap p-6">
+      <section
+        ref="strip"
+        class="flex min-w-0 flex-1 gap-6 overflow-x-auto scrollbar-none"
+      >
+        <CompanyCard
+          v-for="company in companies"
+          :key="company.name"
+          :company="company"
+          class="w-44 shrink-0"
+        />
+      </section>
+
+      <button
+        type="button"
+        class="flex size-8 shrink-0 items-center justify-center rounded-full bg-accent text-panel"
+        aria-label="Weitere Firmen anzeigen"
+        @click="scrollStrip"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          class="size-4"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="m9 6 6 6-6 6" />
+        </svg>
+      </button>
+    </div>
 
     <section class="grid grid-cols-1 gap-8 xl:grid-cols-[714px_minmax(0,1fr)]">
       <ChartPanel title="Revenue last 3 years" class="h-88" />
