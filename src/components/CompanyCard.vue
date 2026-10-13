@@ -42,7 +42,7 @@ function step(delta: number): void {
     role="button"
     tabindex="0"
     :aria-pressed="selected"
-    class="flex cursor-pointer flex-col gap-2 rounded-2xl bg-panel px-6 py-5 text-white"
+    class="flex cursor-pointer flex-col gap-2 rounded-2xl bg-panel px-4 py-4 text-white sm:px-6 sm:py-5"
     :style="selected ? { boxShadow: `0 0 0 2px ${color}` } : undefined"
     @click="emit('select', company.name)"
     @keydown.enter.prevent="emit('select', company.name)"

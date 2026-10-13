@@ -72,7 +72,7 @@ function toggleSelected(name: string): void {
           :key="company.name"
           :company="company"
           :selected="selected === company.name"
-          class="w-40 shrink-0 sm:w-44"
+          class="w-52 shrink-0 sm:w-44"
           @select="toggleSelected"
         />
       </section>
