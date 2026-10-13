@@ -5,9 +5,14 @@ import ChartPanel from "./components/ChartPanel.vue";
 import { companies } from "./data/companies";
 
 const strip = ref<HTMLElement | null>(null);
+const canScrollLeft = ref(false);
 
-function scrollStrip(): void {
-  strip.value?.scrollBy({ left: 200, behavior: "smooth" });
+function updateScrollState(): void {
+  canScrollLeft.value = (strip.value?.scrollLeft ?? 0) > 4;
+}
+
+function scrollStrip(direction: 1 | -1): void {
+  strip.value?.scrollBy({ left: 200 * direction, behavior: "smooth" });
 }
 </script>
 
@@ -21,9 +26,30 @@ function scrollStrip(): void {
     </header>
 
     <div class="flex items-center gap-4 rounded-[20px] bg-panel-wrap p-6">
+      <button
+        type="button"
+        class="flex size-8 shrink-0 items-center justify-center rounded-full bg-accent text-panel"
+        :class="{ invisible: !canScrollLeft }"
+        aria-label="Vorherige Firmen anzeigen"
+        @click="scrollStrip(-1)"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          class="size-4"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="m15 6-6 6 6 6" />
+        </svg>
+      </button>
+
       <section
         ref="strip"
         class="flex min-w-0 flex-1 gap-6 overflow-x-auto scrollbar-none"
+        @scroll="updateScrollState"
       >
         <CompanyCard
           v-for="company in companies"
@@ -37,7 +63,7 @@ function scrollStrip(): void {
         type="button"
         class="flex size-8 shrink-0 items-center justify-center rounded-full bg-accent text-panel"
         aria-label="Weitere Firmen anzeigen"
-        @click="scrollStrip"
+        @click="scrollStrip(1)"
       >
         <svg
           viewBox="0 0 24 24"
