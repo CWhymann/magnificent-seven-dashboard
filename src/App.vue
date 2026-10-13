@@ -91,7 +91,7 @@ onUnmounted(() => {
           :key="company.name"
           :company="company"
           :selected="selected === company.name"
-          class="w-52 shrink-0 snap-start sm:w-44"
+          class="w-52 shrink-0 snap-start sm:w-56"
           @select="toggleSelected"
         />
       </section>
@@ -122,12 +122,12 @@ onUnmounted(() => {
     <section
       class="grid grid-cols-1 gap-6 sm:gap-8 xl:grid-cols-[714px_minmax(0,1fr)]"
     >
-      <ChartPanel title="Revenue last 3 years" class="h-104 sm:h-88">
+      <ChartPanel title="Revenue last 3 years" class="h-112 sm:h-88">
         <RevenueLineChart />
       </ChartPanel>
       <ChartPanel
         title="Revenue Breakdown Magnificent Seven"
-        class="h-104 sm:h-88"
+        class="h-112 sm:h-88"
       >
         <RevenueDonut />
       </ChartPanel>

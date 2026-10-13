@@ -42,27 +42,27 @@ function step(delta: number): void {
     role="button"
     tabindex="0"
     :aria-pressed="selected"
-    class="flex cursor-pointer flex-col gap-2 rounded-2xl bg-panel px-3 py-3 text-white sm:px-6 sm:py-5"
+    class="flex h-56 cursor-pointer flex-col justify-between rounded-2xl bg-panel px-3 py-4 text-white sm:h-52 sm:px-5 sm:py-4"
     :style="selected ? { boxShadow: `0 0 0 2px ${color}` } : undefined"
     @click="emit('select', company.name)"
     @keydown.enter.prevent="emit('select', company.name)"
   >
     <div class="flex items-center justify-between gap-2">
       <div class="flex min-w-0 items-center gap-2">
-        <img :src="company.logo" :alt="company.name" class="size-5 shrink-0" />
+        <img :src="company.logo" :alt="company.name" class="size-6 shrink-0" />
         <h3 class="truncate text-xl font-medium">{{ company.name }}</h3>
       </div>
       <div class="flex shrink-0 gap-1">
         <button
           type="button"
-          class="flex size-6 items-center justify-center rounded-full bg-accent text-panel disabled:opacity-30"
+          class="flex size-7 items-center justify-center rounded-full bg-accent text-panel disabled:opacity-30"
           :disabled="index === 0"
           aria-label="Previous quarter"
           @click.stop="step(-1)"
         >
           <svg
             viewBox="0 0 24 24"
-            class="size-3"
+            class="size-3.5"
             fill="none"
             stroke="currentColor"
             stroke-width="3"
@@ -74,14 +74,14 @@ function step(delta: number): void {
         </button>
         <button
           type="button"
-          class="flex size-6 items-center justify-center rounded-full bg-accent text-panel disabled:opacity-30"
+          class="flex size-7 items-center justify-center rounded-full bg-accent text-panel disabled:opacity-30"
           :disabled="isLatest"
           aria-label="Next quarter"
           @click.stop="step(1)"
         >
           <svg
             viewBox="0 0 24 24"
-            class="size-3"
+            class="size-3.5"
             fill="none"
             stroke="currentColor"
             stroke-width="3"
@@ -94,14 +94,14 @@ function step(delta: number): void {
       </div>
     </div>
 
-    <p class="text-sm whitespace-nowrap">Revenue {{ current.label }}</p>
+    <p class="text-base whitespace-nowrap">Revenue {{ current.label }}</p>
 
     <div class="flex items-center justify-between gap-2">
       <span class="text-2xl font-medium">{{ current.revenue.toFixed(2) }}</span>
 
       <div
         v-if="previous"
-        class="flex flex-col items-end text-sm font-medium"
+        class="flex flex-col items-end text-base font-medium"
         :class="positive ? 'text-positive' : 'text-negative'"
       >
         <div class="flex items-center">
@@ -129,7 +129,7 @@ function step(delta: number): void {
     </div>
 
     <p class="text-sm">In Bill USD</p>
-    <p v-if="previous" class="text-sm whitespace-nowrap text-white/60">
+    <p v-if="previous" class="text-base whitespace-nowrap text-white/60">
       vs. {{ previous.label }}: {{ previous.revenue.toFixed(2) }}
     </p>
   </article>
