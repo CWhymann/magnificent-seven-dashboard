@@ -27,7 +27,12 @@ const options = computed(() => ({
   plugins: {
     legend: {
       position: (narrow.value ? "bottom" : "right") as "bottom" | "right",
-      labels: { color: "#ffffff", boxWidth: 10, font: { size: 14 } },
+      labels: {
+        color: "#ffffff",
+        boxWidth: 10,
+        padding: narrow.value ? 6 : 10,
+        font: { size: narrow.value ? 12 : 14 },
+      },
     },
     tooltip: {
       callbacks: {

@@ -13,6 +13,7 @@ import {
   FIRMS,
   lastQuarterKeys,
   longQuarter,
+  shortQuarter,
   yoyGrowth,
 } from "../../data/metrics";
 import { useNarrow } from "../../composables/useNarrow";
@@ -30,7 +31,7 @@ const narrow = useNarrow();
 const chartData = computed(() => ({
   labels: FIRMS.map((f) => f.label),
   datasets: keys.map((key, i) => ({
-    label: longQuarter(key),
+    label: narrow.value ? shortQuarter(key) : longQuarter(key),
     backgroundColor: shades[i],
     borderColor: "#ffffff",
     borderWidth: 1,
@@ -38,26 +39,40 @@ const chartData = computed(() => ({
   })),
 }));
 
-const options = computed(() => ({
-  responsive: true,
-  maintainAspectRatio: false,
-  plugins: {
-    legend: {
-      position: (narrow.value ? "bottom" : "right") as "bottom" | "right",
-      labels: { color: "#ffffff", boxWidth: 10, font: { size: 14 } },
+const options = computed(() => {
+  const size = narrow.value ? 12 : 14;
+  return {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        position: (narrow.value ? "bottom" : "right") as "bottom" | "right",
+        labels: {
+          color: "#ffffff",
+          boxWidth: 10,
+          padding: narrow.value ? 6 : 10,
+          font: { size },
+        },
+      },
     },
-  },
-  scales: {
-    x: {
-      ticks: { color: "#ffffff", font: { size: 14 } },
-      grid: { display: false },
+    scales: {
+      x: {
+        ticks: {
+          color: "#ffffff",
+          font: { size },
+          maxRotation: narrow.value ? 45 : 0,
+          minRotation: narrow.value ? 45 : 0,
+          autoSkip: false,
+        },
+        grid: { display: false },
+      },
+      y: {
+        ticks: { color: "#ffffff", font: { size } },
+        grid: { color: "rgba(255,255,255,0.25)" },
+      },
     },
-    y: {
-      ticks: { color: "#ffffff", font: { size: 14 } },
-      grid: { color: "rgba(255,255,255,0.25)" },
-    },
-  },
-}));
+  };
+});
 </script>
 
 <template>

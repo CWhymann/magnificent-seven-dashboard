@@ -49,11 +49,13 @@ onUnmounted(() => {
 
 <template>
   <main
-    class="mx-auto flex w-full max-w-306 flex-col gap-6 px-3 py-10 sm:gap-8 sm:px-4 sm:py-16"
+    class="mx-auto flex w-full max-w-[1280px] flex-col gap-6 px-1 py-10 sm:gap-8 sm:px-4 sm:py-16"
   >
-    <header class="flex items-center gap-4 sm:gap-6">
-      <span class="h-8 w-24 rounded-r-full bg-accent" />
-      <h1 class="text-2xl font-medium text-title sm:text-4xl">
+    <header class="flex min-w-0 items-center gap-2 sm:gap-6">
+      <span class="h-6 w-8 shrink-0 rounded-r-full bg-accent sm:h-8 sm:w-24" />
+      <h1
+        class="min-w-0 text-[15px] leading-tight font-medium whitespace-nowrap text-title sm:text-2xl lg:text-4xl"
+      >
         The Magnificent Seven Companies
       </h1>
     </header>
@@ -122,12 +124,12 @@ onUnmounted(() => {
     <section
       class="grid grid-cols-1 gap-6 sm:gap-8 xl:grid-cols-[714px_minmax(0,1fr)]"
     >
-      <ChartPanel title="Revenue last 3 years" class="h-96 sm:h-88">
+      <ChartPanel title="Revenue last 3 years" class="h-80 sm:h-88">
         <RevenueLineChart />
       </ChartPanel>
       <ChartPanel
         title="Revenue Breakdown Magnificent Seven"
-        class="h-96 sm:h-88"
+        class="h-80 sm:h-88"
       >
         <RevenueDonut />
       </ChartPanel>
@@ -136,13 +138,13 @@ onUnmounted(() => {
     <section
       class="grid grid-cols-1 gap-6 sm:gap-8 xl:grid-cols-[minmax(0,1fr)_293px_491px]"
     >
-      <ChartPanel title="Net Income TTM" class="h-74">
+      <ChartPanel title="Net Income TTM" class="h-80 sm:h-74">
         <NetIncomeBar />
       </ChartPanel>
-      <ChartPanel title="Gross Margin in % LQ" class="h-74">
+      <ChartPanel title="Gross Margin in % LQ" class="h-80 sm:h-74">
         <GrossMarginBar />
       </ChartPanel>
-      <ChartPanel title="Revenue Growth in % YoY" class="h-74">
+      <ChartPanel title="Revenue Growth in % YoY" class="h-80 sm:h-74">
         <RevenueGrowthBar />
       </ChartPanel>
     </section>

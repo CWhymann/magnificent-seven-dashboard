@@ -47,38 +47,57 @@ const chartData = computed(() => ({
   })),
 }));
 
-const options = computed(() => ({
-  responsive: true,
-  maintainAspectRatio: false,
-  interaction: { mode: "index" as const, intersect: false },
-  plugins: {
-    legend: {
-      position: (narrow.value ? "bottom" : "right") as "bottom" | "right",
-      labels: { color: "#ffffff", boxWidth: 10, font: { size: 14 } },
-    },
-    tooltip: {
-      callbacks: {
-        title: (items: { dataIndex: number }[]) =>
-          items.length ? longQuarter(keys[items[0].dataIndex]) : "",
-        label: (item: {
-          dataset: { label?: string };
-          parsed: { y: number | null };
-        }) =>
-          `${item.dataset.label}: ${item.parsed.y === null ? "no data" : item.parsed.y.toFixed(2) + " bn $"}`,
+const options = computed(() => {
+  const size = narrow.value ? 12 : 14;
+  return {
+    responsive: true,
+    maintainAspectRatio: false,
+    interaction: { mode: "index" as const, intersect: false },
+    plugins: {
+      legend: {
+        position: (narrow.value ? "bottom" : "right") as "bottom" | "right",
+        labels: {
+          color: "#ffffff",
+          boxWidth: 10,
+          padding: narrow.value ? 6 : 10,
+          font: { size },
+        },
+      },
+      tooltip: {
+        callbacks: {
+          title: (items: { dataIndex: number }[]) =>
+            items.length ? longQuarter(keys[items[0].dataIndex]) : "",
+          label: (item: {
+            dataset: { label?: string };
+            parsed: { y: number | null };
+          }) =>
+            `${item.dataset.label}: ${item.parsed.y === null ? "no data" : item.parsed.y.toFixed(2) + " bn $"}`,
+        },
       },
     },
-  },
-  scales: {
-    x: {
-      ticks: { color: "#ffffff", font: { size: 14 } },
-      grid: { color: "rgba(255,255,255,0.25)" },
+    scales: {
+      x: {
+        ticks: {
+          color: "#ffffff",
+          font: { size },
+          maxRotation: narrow.value ? 45 : 50,
+          minRotation: narrow.value ? 45 : 0,
+          autoSkip: true,
+          maxTicksLimit: narrow.value ? 6 : 12,
+        },
+        grid: { color: "rgba(255,255,255,0.25)" },
+      },
+      y: {
+        ticks: {
+          color: "#ffffff",
+          font: { size },
+          maxTicksLimit: narrow.value ? 5 : 8,
+        },
+        grid: { color: "rgba(255,255,255,0.25)" },
+      },
     },
-    y: {
-      ticks: { color: "#ffffff", font: { size: 14 } },
-      grid: { color: "rgba(255,255,255,0.25)" },
-    },
-  },
-}));
+  };
+});
 </script>
 
 <template>
