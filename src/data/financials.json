@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-19T11:27:58.946Z",
+  "updatedAt": "2026-10-26T11:46:20.646Z",
   "chartQuarters": [
     "2019Q1",
     "2019Q2",
@@ -28,7 +28,9 @@
     "2025Q1",
     "2025Q2",
     "2025Q3",
-    "2025Q4"
+    "2025Q4",
+    "2026Q1",
+    "2026Q2"
   ],
   "companies": [
     {
@@ -1599,6 +1601,18 @@
           "revenue": 24.901,
           "netIncome": 0.856,
           "grossMargin": 20.1
+        },
+        {
+          "quarter": "2026Q1",
+          "revenue": 22.387,
+          "netIncome": 0.491,
+          "grossMargin": 21.1
+        },
+        {
+          "quarter": "2026Q2",
+          "revenue": 28.236,
+          "netIncome": 1.128,
+          "grossMargin": 16.8
         }
       ]
     }
